@@ -19,7 +19,7 @@ function nameCopy () {
     } else {
         alert("Админа будут звать: " + admin);
     }
-
+    //
 }
 
 function jsqstn() {
