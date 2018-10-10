@@ -14,7 +14,7 @@ function nameCopy () {
 
     console.log (typeof name);
 
-    if (name == 0) {
+    if (name == 0 || name == null) {
         alert("Постарайтесь и введите что-нибудь");
     } else {
         alert("Админа будут звать: " + admin);
