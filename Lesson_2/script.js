@@ -40,8 +40,6 @@ function test2(a, b , x) {
             if (a >= 0 && a < 16) {
                 alert(a);
                 a = hard(++a);
-            } else {
-                alert("Неверное число!")
             }
             return a;
         }
