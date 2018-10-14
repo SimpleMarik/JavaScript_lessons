@@ -32,20 +32,22 @@ function test2(a, b , x) {
 
     //Задание 4
 
-    a = +prompt("Введите число меньше 15 для срабатывания счётчика до 15:");
+    a = +prompt("Введите число от 0 до 15 для срабатывания счётчика:");
     switch (a) {
         case a:
 
         function hard(a) {
-            if (a < 15) {
+            if (a >= 0 && a < 16) {
                 alert(a);
                 a = hard(++a);
+            } else {
+                alert("Неверное число!")
             }
             return a;
         }
 
-            alert(hard(a));
-            break;
+        hard(a);
+        break;
     }
 }
 
@@ -70,10 +72,73 @@ function test3() {
 
 }
 
+function test4() {
+
+    //Задания 5 и 6
+    
+    function addition(a, b) {
+        return c = a + b;
+    }
+
+    function subtraction(a, b) {
+        return c = a - b;
+    }
+
+    function multiplication(a, b) {
+        return c = a * b;
+    }
+    
+    function division(a, b) {
+        return c = a / b;
+    }
+
+    function mathOperation(arg1, arg2, operation) {
+
+        arg1 = +prompt("Введите первое число:");
+        arg2 = +prompt("Введите второе число:");
+        operation = +prompt("1 - сложение, 2 - вычитание, 3 - умножение 4 - деление:");
+
+        switch (operation) {
+            case 1:
+                alert(addition(arg1, arg2));
+                break;
+            case 2:
+                alert(subtraction(arg1, arg2));
+                break;
+            case 3:
+                alert(multiplication(arg1, arg2));
+            case 4:
+                alert(division(arg1, arg2));
+                break;
+            default:
+                alert("Что - то пошло не так!");
+                break;
+        }
+
+    }
+
+    mathOperation();
+}
+
     // Задание 7* - "0" — это значение.
     // "Null" - специальное значение, которое имеет смысл "Ничего" или "Значение неизвестно".
     // "Undefined" - значение не присвоено.
     // https://cs9.pikabu.ru/post_img/2017/03/25/11/149047014916869290.jpg - наглядно.
+
+    function test5() {
+        //Задание 8
+
+        function power(val, pow) {
+            if (pow != 1) {
+                return val * power(val, pow - 1);
+            } else {
+                return val;
+            }
+        }
+
+        alert(power(+prompt(), +prompt()));
+    }
+
 
     /*
 
