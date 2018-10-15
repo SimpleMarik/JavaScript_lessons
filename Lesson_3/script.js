@@ -3,7 +3,7 @@ console.log("***NO BUTTONS!!!***")
 console.log("***Первое Задание***");
 // Маркеры зло!
 primeNumbers:
-    for (i = 1; i < 100; i++) {
+    for (i = 0; i < 100; i++) {
         for (j = 2; j < i; j++) {
             if (i % j == 0) continue primeNumbers;
         }
