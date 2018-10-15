@@ -44,17 +44,21 @@ for (i; i < n; console.log(i++)) {
 console.log("***Четвертое Задание***");
 
 //Способ через переменную
+
 let str = "";
+
 for(let i = 0; i <= 20; i++) {
     str += "x";
     console.log(str);
 }
 //Способ через массив
+
 let arr = [];
-    for (i = 1; i < 21; i++) {
-        arr.push('x');
-        console.log(arr);
-    }
+
+for (i = 1; i < 21; i++) {
+    arr.push('x');
+    console.log(arr);
+}
 
 
 console.log("***Пятое Задание***");
