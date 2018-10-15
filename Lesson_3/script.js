@@ -1,6 +1,7 @@
 console.log("***NO BUTTONS!!!***")
 
 console.log("***Первое Задание***");
+// Маркеры зло!
 primeNumbers:
     for (i = 1; i < 100; i++) {
         for (j = 2; j < i; j++) {
@@ -27,7 +28,7 @@ function numbers(i) {
 do {
     numbers(i);
     i++;
-} while (i < n);
+} while (i <= n);
 
 
 
@@ -36,7 +37,7 @@ console.log("***Третье Задание***");
 i = 1;
 n = 10;
 
-for (i; i <= n; console.log(i++)) {
+for (i; i < n; console.log(i++)) {
 
 }
 
