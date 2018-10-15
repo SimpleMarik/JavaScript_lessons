@@ -1,3 +1,5 @@
+console.log("***NO BUTTONS!!!***")
+
 console.log("***Первое Задание***");
 primeNumbers:
     for (i = 1; i < 100; i++) {
@@ -41,7 +43,7 @@ for (i; i <= n; console.log(i++)) {
 console.log("***Четвертое Задание***");
 
 var arr = [];
-    for (i = 1; i < 31; i++) {
+    for (i = 1; i < 21; i++) {
         arr.push('x');
         console.log(arr);
     }
@@ -56,7 +58,7 @@ function countBasketPrice(array) {
     for (i = 0; i < array.length; i++) {
         price += array[i];
     }
-    console.log(price);
+    console.log("Сумма вашей покупки: " + price + " рубля!");
 }
 
 countBasketPrice(myBasket);
