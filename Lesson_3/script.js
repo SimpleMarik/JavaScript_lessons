@@ -43,7 +43,7 @@ for (i; i < n; console.log(i++)) {
 
 console.log("***Четвертое Задание***");
 
-var arr = [];
+let arr = [];
     for (i = 1; i < 21; i++) {
         arr.push('x');
         console.log(arr);
