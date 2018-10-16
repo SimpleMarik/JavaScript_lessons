@@ -1,11 +1,12 @@
 console.log("***NO BUTTONS!!!***")
 
 console.log("***Первое Задание***");
-// Маркеры зло!
+// Метки зло!
 primeNumbers:
     for (i = 0; i < 100; i++) {
         for (j = 2; j < i; j++) {
-            if (i % j == 0) continue primeNumbers;
+            if (i % j === 0) continue primeNumbers; //Webstorm предложил использовать
+            // строгое неравенство. Почему?
         }
         console.log(i);
     }
@@ -18,7 +19,8 @@ let n = 10;
 function numbers(i) {
     if (i == 0){
         console.log(i + " - Это ноль!")
-    } else if (i % 2) {
+    } else if (i % 2) { // Насколько я понял, необязательно писать i%2 == 1,
+        // компилятор проверяет есть ли остаток. Верно?
         console.log(i + " - Нечётное число")
     } else {
         console.log(i + " - Чётное число")
