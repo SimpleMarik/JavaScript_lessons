@@ -6,7 +6,7 @@ primeNumbers:
     for (i = 0; i < 100; i++) {
         for (j = 2; j < i; j++) {
             if (i % j === 0) continue primeNumbers; //Webstorm предложил использовать
-            // строгое неравенство. Почему?
+            // строгое равенство. Почему?
         }
         console.log(i);
     }
@@ -17,6 +17,7 @@ i = 0;
 let n = 10;
 
 function numbers(i) {
+
     if (i == 0){
         console.log(i + " - Это ноль!")
     } else if (i % 2) { // Насколько я понял, необязательно писать i%2 == 1,
