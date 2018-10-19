@@ -1,4 +1,6 @@
-console.log("***Задание 1***")
+console.log("***Задание 1***");
+
+console.log("Математический способ");
 
 let enterNumber = +prompt("Введите число от 0 до 999");
 
@@ -8,12 +10,7 @@ let numbers = {
     hundreds: 0
 };
 
-if (enterNumber <= 9 && enterNumber > 0) {
-    numbers.units = enterNumber;
-} else if (enterNumber <= 99 && enterNumber > 0) {
-    numbers.units = enterNumber % 10;
-    numbers.tens = Math.floor(enterNumber / 10 % 10);
-} else if (enterNumber <= 999 && enterNumber > 0) {
+if (enterNumber <= 999 && enterNumber > 0) {
     numbers.units = enterNumber % 10;
     numbers.tens = Math.floor(enterNumber / 10 % 10);
     numbers.hundreds = Math.floor(enterNumber / 100 % 10);
@@ -23,7 +20,36 @@ if (enterNumber <= 9 && enterNumber > 0) {
 
 console.log(numbers);
 
-console.log("***Задание 2***")
+console.log("Метод через *split*");
+
+//Насколько я понимаю, данный метод невозможно реализовать с +prompt.
+//Возвращает ошибку mNumbers.split is not a function.
+
+let mNumbers = prompt("Введите число от 0 до 999");
+
+let base = mNumbers.split('');
+
+if (base.length > 3 || base.length <= 0) {
+    alert("Вы ввели неверное число");
+    base = [];
+} else if (base.length < 3) {
+    while (base.length < 3) {
+        base.unshift(0);
+    }
+} else if (base[0] == '-') {
+    alert('Вы ввели отрицательное число');
+    base = [];
+}
+
+let objNum = {
+    units: base[2],
+    tens: base[1],
+    hundreds: base[0]
+};
+
+console.log(objNum);
+
+console.log("***Задание 2***");
 
 let bee = {
     price: 30,
@@ -46,7 +72,7 @@ let shrek = {
 myBasket = [bee, shrek];
 
 function addBasket() {
-    myBasket.push(+prompt("Добавьте цену: "))
+    myBasket.push(+prompt("Добавьте цену: "));
     console.log(myBasket);
 }
 
@@ -59,7 +85,7 @@ function countBasketPrice(array) {
     for (i = 0; i < array.length; i++) {
         price += array[i].price;
     }
-    console.log("Сумма вашей покупки: " + price + " рубля!");
+    console.log("Сумма вашей покупки: " + price + " руб!");
 }
 
 countBasketPrice(myBasket);
