@@ -5,10 +5,12 @@
 header {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 .logo {
-  width: 10%;
-  height: 10%;
+  width: 100px;
+  height: 100px;
 }
 .cartCount {
   display: flex;
