@@ -68,7 +68,6 @@ let shrek = {
     }
 };
 
-
 myBasket = [bee, shrek];
 
 function addBasket() {
@@ -89,4 +88,6 @@ function countBasketPrice(array) {
 }
 
 countBasketPrice(myBasket);
+
+
 
