@@ -13,6 +13,9 @@ let figure = {
     10: ['1', '2', '3', '4', '5', '6', '7', '8', '']
 };
 
+//Можно, конечно, сделать массив из других элементов,
+//но мне попался такой вариант. И я решил использовать его.
+
 for (i = 0; i<9; i++) {
 
     row = document.createElement('tr');
@@ -30,6 +33,8 @@ for (i = 0; i<9; i++) {
         if (figure[i]!==undefined && figure[i][j]!==undefined){
             cell.style.backgroundImage = 'url(сhess_symbols_set_.png)';
             cell.style.backgroundPosition = figure[i][j];
+            //cell.innerHTML = figure[i][j]; при использовании массива
+            //с html кодами фигур.
         }
 
         if (j == 8) {
@@ -89,3 +94,5 @@ function makeChess() {
 }
 
 makeChess();
+
+//
