@@ -52,7 +52,7 @@ inCart[0].addEventListener('click', function () {
 //Работа с изображениями
 
 let loopInterval;
-let loopCount = 1;
+let loopCount = 0;
 let timer = 3000;
 let picCount = 0;
 
@@ -68,7 +68,7 @@ function init() {
             changeBigPicture (i, images[i].src);
         });
         }
-    //loopInterval = setInterval(loopPics, timer, images);
+    //loopInterval = setInterval(loopPics, timer);
     //Закоментил для удобства
 }
 
@@ -82,12 +82,12 @@ function changeBigPicture(index, src) {
 }
 
 
-function loopPics(images) {
-    changeBigPicture(loopCount, images[loopCount].src);
+function loopPics() {
     loopCount++;
     if (loopCount == images.length) {
         loopCount = 0;
     }
+    changeBigPicture(loopCount, images[loopCount].src);
 }
 
 function nextPicture() {
