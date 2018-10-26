@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="mycontainer">
+        <header>
+            <img class="logo" src="images/icon2.png" alt="">
+            <h1 class="carttext">КОРЗИНА</h1>
+        </header>
+        <hr>
+        <div class="cartCount">
+            <img src="images/shopping_cart_PNG3.png" alt="" class="cartImg"> &nbsp;
+            <span id="products" class="products">0</span>&nbsp;<p>товаров,</p>&nbsp;<span class="summ" id="summ">0.00 р.</span>
+            <button class="deletecart" onclick="basketDelete(myBasket)">Очистить корзину</button>
+        </div>
+        <div class="findSearch">
+            <ul>
+                <li class="focus"><a href="#">Всё</a></li>
+                <li><a href="#">MacPro</a></li>
+                <li><a href="#">Ipad</a></li>
+                <li><a href="#">Phone</a></li>
+            </ul>
+            <form action="#" class="search">
+                <input type="text" placeholder="Search...">
+                <button class="searchbtn"><img src="images/search.png" alt=""></button>
+            </form>
+        </div>
+        <div class="goods">
+            <div class="good">
+                <img src="images/macbook-select-gold-201706_GEO_US.jpg" id="bigPicture" alt="">
+                <img src="images/icons8-less-than-50.png" alt="" class="lessthan" id="lessThan">
+                <img src="images/icons8-more-than-52.png" alt="" class="morethan" id="moreThan">
+                <div class="sliderImg">
+                    <img src="images/macbook-select-gold-201706_GEO_US.jpg" alt="">
+                    <img src="images/macbook-select-space-gray-201706_GEO_GB.jpg" alt="">
+                    <img src="images/mbp13-space-select-201807_GEO_RU.jpg" alt="">
+                    <img src="images/mbp15touch-silver-select-201807.jpg" alt="">
+                </div>
+                <h2>Macbook</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi atque beatae blanditiis cupiditate fugiat harum ipsam iusto maiores, maxime molestiae perferendis repellendus rerum temporibus voluptates. Beatae praesentium quisquam sequi?</p>
+                <div class="buttons">
+                    <button class="incart">В корзину</button>
+                    <button class="more">Подробности</button>
+                </div>
+                <span class="costitem">RUB 15.99</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
