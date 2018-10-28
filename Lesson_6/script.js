@@ -40,9 +40,6 @@ function countBasketPrice(array) {
 
 countBasketPrice(myBasket);
 
-
-let summ = document.getElementById('summ');
-
 let inCart = document.getElementsByClassName('incart');
 
 inCart[0].addEventListener('click', function () {
@@ -65,17 +62,18 @@ let prevPic = document.getElementById('lessThan');
 let good = document.getElementsByClassName('good');
 
 let images = good[0].querySelectorAll(".sliderImg img");
-
 let popUpSliderImg = document.querySelectorAll('.popUpSliderImg img');
 
 function init() {
 
     for (let i = 0; i < images.length; i++) {
-        images[i].addEventListener('click', function () {
+        images[i].addEventListener('mouseover', function () {
             changeBigPicture (bigPicture ,i, images[i].src);
         });
-        popUpSliderImg[i].addEventListener('click', function () {
-            changeBigPicture(popUpBigPicture, i, popUpSliderImg[i].src);
+    }
+    for (let j = 0; j < popUpSliderImg.length; j++) {
+        popUpSliderImg[j].addEventListener('click', function () {
+            changeBigPicture(popUpBigPicture, j, popUpSliderImg[j].src);
         })
     }
     loopInterval = setInterval(function () {
@@ -84,9 +82,9 @@ function init() {
     //Закоментил для удобства
 }
 
-function changeBigPicture(bigPicture, index, src) {
+function changeBigPicture(wantedBigPicture, index, src) {
     if (src !== undefined) {
-        bigPicture.src = src;
+        wantedBigPicture.src = src;
     }
     loopCount = index;
     picCount = index;
@@ -121,7 +119,9 @@ function previousPicture() {
 
 prevPic.addEventListener("click", previousPicture);
 
-function show(state){
+//Всплывающее окно
+
+function show(state) {
     document.getElementById('window').style.display = state;
     document.getElementById('wrap').style.display = state;
 }

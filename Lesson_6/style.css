@@ -89,32 +89,32 @@ header {
 }
 .goods .good .lessthan {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  left: -45px;
+  width: 50px;
+  height: 50px;
+  left: -25px;
   top: 150px;
   cursor: pointer;
 }
 .goods .good .lessthan:active {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  left: -45px;
+  width: 50px;
+  height: 50px;
+  left: -25px;
   top: 151px;
 }
 .goods .good .morethan {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  right: -45px;
+  width: 50px;
+  height: 50px;
+  right: -25px;
   top: 150px;
   cursor: pointer;
 }
 .goods .good .morethan:active {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  right: -45px;
+  width: 50px;
+  height: 50px;
+  right: -25px;
   top: 151px;
 }
 .goods .good .sliderImg {
@@ -125,6 +125,7 @@ header {
 .goods .good .sliderImg img {
   width: 20%;
   height: 20%;
+  cursor: pointer;
 }
 .goods .good h2 {
   margin: 10px;
