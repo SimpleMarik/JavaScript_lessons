@@ -146,3 +146,49 @@ header {
 .goods .good .costitem {
   align-self: flex-start;
 }
+.goods .wrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.8;
+  background-color: gray;
+  z-index: 10;
+  overflow: auto;
+}
+.goods .window {
+  display: none;
+  position: fixed;
+  width: 500px;
+  height: auto;
+  margin: 50px auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  z-index: 20;
+  background-color: white;
+  padding: 16px;
+}
+.goods .window .close {
+  width: 20px;
+  height: 20px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+.goods .window .popUpBigPicture {
+  width: 50%;
+  margin: 10px auto;
+}
+.goods .window .popUpSliderImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.goods .window .popUpSliderImg img {
+  width: 10%;
+  height: 10%;
+}

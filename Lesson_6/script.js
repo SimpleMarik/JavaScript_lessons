@@ -56,24 +56,35 @@ let loopCount = 0;
 let timer = 3000;
 let picCount = 0;
 
+let bigPicture = document.getElementById('bigPicture');
+let popUpBigPicture = document.getElementById('popUpBigPicture');
+
 let nextPic = document.getElementById('moreThan');
 let prevPic = document.getElementById('lessThan');
 
-let images = document.querySelectorAll(".sliderImg img");
+let good = document.getElementsByClassName('good');
+
+let images = good[0].querySelectorAll(".sliderImg img");
+
+let popUpSliderImg = document.querySelectorAll('.popUpSliderImg img');
 
 function init() {
 
     for (let i = 0; i < images.length; i++) {
         images[i].addEventListener('click', function () {
-            changeBigPicture (i, images[i].src);
+            changeBigPicture (bigPicture ,i, images[i].src);
         });
-        }
-    //loopInterval = setInterval(loopPics, timer);
+        popUpSliderImg[i].addEventListener('click', function () {
+            changeBigPicture(popUpBigPicture, i, popUpSliderImg[i].src);
+        })
+    }
+    loopInterval = setInterval(function () {
+        loopPics(popUpBigPicture);
+    }, timer);
     //Закоментил для удобства
 }
 
-function changeBigPicture(index, src) {
-    let bigPicture = document.getElementById('bigPicture');
+function changeBigPicture(bigPicture, index, src) {
     if (src !== undefined) {
         bigPicture.src = src;
     }
@@ -82,12 +93,12 @@ function changeBigPicture(index, src) {
 }
 
 
-function loopPics() {
+function loopPics(bpicture) {
     loopCount++;
     if (loopCount == images.length) {
         loopCount = 0;
     }
-    changeBigPicture(loopCount, images[loopCount].src);
+    changeBigPicture(bpicture ,loopCount, images[loopCount].src);
 }
 
 function nextPicture() {
@@ -95,7 +106,7 @@ function nextPicture() {
     if (picCount == images.length) {
         picCount = 0;
     }
-    changeBigPicture(picCount, images[picCount].src);
+    changeBigPicture(bigPicture ,picCount, images[picCount].src);
 }
 
 nextPic.addEventListener("click", nextPicture);
@@ -105,10 +116,15 @@ function previousPicture() {
     if (picCount === -1) {
         picCount = images.length - 1;
     }
-    changeBigPicture(picCount, images[picCount].src);
+    changeBigPicture(bigPicture ,picCount, images[picCount].src);
 }
 
 prevPic.addEventListener("click", previousPicture);
+
+function show(state){
+    document.getElementById('window').style.display = state;
+    document.getElementById('wrap').style.display = state;
+}
 
 
 window.onload = init();
