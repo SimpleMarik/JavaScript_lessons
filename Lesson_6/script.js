@@ -70,10 +70,11 @@ innerIncart[2].addEventListener('click', function () {
 
 
 
-let loopInterval = [];
+let loopInterval;
 let loopCount = -1;
 let timer = 3000;
 let picCount = 0;
+
 
 let bigPicture = document.getElementsByClassName('bigPicture');
 let popUpBigPicture = document.getElementsByClassName('popUpBigPicture');
@@ -99,6 +100,8 @@ let images = good[0].querySelectorAll(".sliderImg img");
 
 
 function init() {
+
+
 
     for (let j = 0; j < mImages.length; j++) {
         for (let i = 0; i < mImages[j].length; i++) {
@@ -129,23 +132,33 @@ function init() {
 
 
     }
+
     for (let j = 0; j < popUpBigPicture.length; j++) {
 
         for (let i = 0; i < popUpSliderImg[j].length; i++) {
             popUpSliderImg[j][i].addEventListener('click', function () {
-                changeBigPicture(popUpBigPicture[j], j, popUpSliderImg[j][i].src);
-            })
+                changeBigPicture(popUpBigPicture[j], i, popUpSliderImg[j][i].src);
+            });
         }
+
+
 
         function loopPics() {
 
-            let myTimer = setTimeout(loopPics, timer);
+            //let loopTimer = setTimeout(loopPics, timer);
+
+            /*
+
+            //Вариант с таймаутом, который в итоге не подошёл, потому что проверка
+            //осуществлялась только по прошествии выставленного в "Timer" времени.
 
             if (document.getElementsByClassName('window')[j].style.display == ('none')) {
-                clearTimeout(myTimer);
+                clearTimeout(loopTimer);
                 loopCount = -1;
                 return;
             }
+
+            */
 
             loopCount++;
 
@@ -156,7 +169,25 @@ function init() {
 
         }
 
+        //Задаём интервал для слайдов
+
+        function interval() {
+            loopInterval = setInterval(loopPics, timer);
+        }
+
+        //Проверка и остановка интервала
+
+        function checkWindow() {
+            if (document.getElementsByClassName('window')[j].style.display == ('none')) {
+                clearInterval(loopInterval);
+                loopCount = -1;
+            }
+        }
+
         document.getElementsByClassName('more')[j].addEventListener('click', loopPics);
+        document.getElementsByClassName('more')[j].addEventListener('click', interval);
+        document.getElementsByClassName('wrap')[j].addEventListener('click', checkWindow);
+        document.getElementsByClassName('close')[j].addEventListener('click', checkWindow);
 
     }
 
@@ -175,9 +206,8 @@ function changeBigPicture(wantedBigPicture, index, src) {
 
 //Всплывающее окно
 
-let popUpWindows = document.getElementsByClassName('window');
 
-for (let i = 0; i < popUpWindows.length; i++) {
+for (let i = 0; i < popUpWindow.length; i++) {
     function show(state) {
         document.getElementsByClassName('window')[i].style.display = state;
         document.getElementsByClassName('wrap')[i].style.display = state;
