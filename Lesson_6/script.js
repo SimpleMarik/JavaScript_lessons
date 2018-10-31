@@ -108,7 +108,7 @@ function init() {
 
         function nextPicture() {
             picCount++;
-            if (picCount == mImages[j].length) {
+            if (picCount >= mImages[j].length) {
                 picCount = 0;
             }
             changeBigPicture(bigPicture[j] ,picCount, mImages[j][picCount].src);
@@ -118,7 +118,7 @@ function init() {
 
         function previousPicture() {
             picCount--;
-            if (picCount === -1) {
+            if (picCount <= -1) {
                 picCount = mImages[j].length - 1;
             }
             changeBigPicture(bigPicture[j] ,picCount, mImages[j][picCount].src);
@@ -131,7 +131,7 @@ function init() {
     for (let j = 0; j < popUpBigPicture.length; j++) {
         function loopPics() {
             loopCount++;
-            if (loopCount == popUpSliderImg[j].length) {
+            if (loopCount >= popUpSliderImg[j].length) {
                 loopCount = 0;
             }
             changeBigPicture(popUpBigPicture[j] ,loopCount, popUpSliderImg[j][loopCount].src);
