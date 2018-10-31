@@ -10,6 +10,7 @@ function toy(id, price, name) {
 
 
 
+
 function addBasket(array, id, price, name) {
     newtoy = new toy(id, price, name);
     array.push(newtoy);
@@ -41,46 +42,107 @@ function countBasketPrice(array) {
 countBasketPrice(myBasket);
 
 let inCart = document.getElementsByClassName('incart');
+let innerIncart = document.getElementsByClassName('innerIncart');
+
+let summa = document.getElementsByClassName('costitem');
+
 
 inCart[0].addEventListener('click', function () {
     addBasket(myBasket, 4, 15.99, 'MacBook');
 });
+inCart[1].addEventListener('click', function () {
+    addBasket(myBasket, 4, 20.99, 'MacBook');
+});
 
+innerIncart[0].addEventListener('click', function () {
+    addBasket(myBasket, 4, 15.99, 'MacBook');
+});
+innerIncart[1].addEventListener('click', function () {
+    addBasket(myBasket, 4, 20.99, 'MacBook');
+});
 //Работа с изображениями
 
-let loopInterval;
+
+
+let loopInterval = [];
 let loopCount = 0;
 let timer = 3000;
 let picCount = 0;
 
-let bigPicture = document.getElementById('bigPicture');
-let popUpBigPicture = document.getElementById('popUpBigPicture');
+let bigPicture = document.getElementsByClassName('bigPicture');
+let popUpBigPicture = document.getElementsByClassName('popUpBigPicture');
 
-let nextPic = document.getElementById('moreThan');
-let prevPic = document.getElementById('lessThan');
+let nextPic = document.getElementsByClassName('morethan');
+let prevPic = document.getElementsByClassName('lessthan');
 
 let good = document.getElementsByClassName('good');
+let popUpWindow = document.getElementsByClassName('window');
+
+let mImages = [];
+let popUpSliderImg = [];
+
+for (let i = 0; i < good.length; i++) {
+    mImages[i] = good[i].querySelectorAll(".sliderImg img");
+    popUpSliderImg[i] = popUpWindow[i].querySelectorAll('.popUpSliderImg img');
+}
 
 let images = good[0].querySelectorAll(".sliderImg img");
-let popUpSliderImg = document.querySelectorAll('.popUpSliderImg img');
+
+
+
+
 
 function init() {
 
-    for (let i = 0; i < images.length; i++) {
-        images[i].addEventListener('mouseover', function () {
-            changeBigPicture (bigPicture ,i, images[i].src);
-        });
+    for (let j = 0; j < mImages.length; j++) {
+        for (let i = 0; i < mImages[j].length; i++) {
+            mImages[j][i].addEventListener('mouseover', function () {
+                changeBigPicture (bigPicture[j] ,i, mImages[j][i].src);
+            });
+        }
+        for (let i = 0; i < popUpSliderImg[j].length; i++) {
+            popUpSliderImg[j][i].addEventListener('click', function () {
+                changeBigPicture(popUpBigPicture[j], j, popUpSliderImg[j][i].src);
+            })
+        }
+
+        function nextPicture() {
+            picCount++;
+            if (picCount == mImages[j].length) {
+                picCount = 0;
+            }
+            changeBigPicture(bigPicture[j] ,picCount, mImages[j][picCount].src);
+        }
+        nextPic[j].addEventListener("click", nextPicture);
+
+
+        function previousPicture() {
+            picCount--;
+            if (picCount === -1) {
+                picCount = mImages[j].length - 1;
+            }
+            changeBigPicture(bigPicture[j] ,picCount, mImages[j][picCount].src);
+        }
+
+        prevPic[j].addEventListener("click", previousPicture);
+
+
     }
-    for (let j = 0; j < popUpSliderImg.length; j++) {
-        popUpSliderImg[j].addEventListener('click', function () {
-            changeBigPicture(popUpBigPicture, j, popUpSliderImg[j].src);
-        })
+    for (let j = 0; j < popUpBigPicture.length; j++) {
+        function loopPics() {
+            loopCount++;
+            if (loopCount == popUpSliderImg[j].length) {
+                loopCount = 0;
+            }
+            changeBigPicture(popUpBigPicture[j] ,loopCount, popUpSliderImg[j][loopCount].src);
+            setTimeout(loopPics,1000);
+        }
+
     }
-    loopInterval = setInterval(function () {
-        loopPics(popUpBigPicture);
-    }, timer);
-    //Закоментил для удобства
+    loopPics();
 }
+
+
 
 function changeBigPicture(wantedBigPicture, index, src) {
     if (src !== undefined) {
@@ -91,40 +153,40 @@ function changeBigPicture(wantedBigPicture, index, src) {
 }
 
 
-function loopPics(bpicture) {
+/* function loopPics(bpicture, looping) {
     loopCount++;
-    if (loopCount == images.length) {
+    if (loopCount == looping.length) {
         loopCount = 0;
     }
-    changeBigPicture(bpicture ,loopCount, images[loopCount].src);
+    changeBigPicture(bpicture ,loopCount, looping[loopCount].src);
 }
+*/
 
-function nextPicture() {
-    picCount++;
-    if (picCount == images.length) {
-        picCount = 0;
-    }
-    changeBigPicture(bigPicture ,picCount, images[picCount].src);
-}
+//nextPic.addEventListener("click", nextPicture);
 
-nextPic.addEventListener("click", nextPicture);
-
-function previousPicture() {
-    picCount--;
-    if (picCount === -1) {
-        picCount = images.length - 1;
-    }
-    changeBigPicture(bigPicture ,picCount, images[picCount].src);
-}
-
-prevPic.addEventListener("click", previousPicture);
 
 //Всплывающее окно
 
-function show(state) {
-    document.getElementById('window').style.display = state;
-    document.getElementById('wrap').style.display = state;
+let popUpWindows = document.getElementsByClassName('window');
+
+for (let i = 0; i < popUpWindows.length; i++) {
+    function show(state) {
+        document.getElementsByClassName('window')[i].style.display = state;
+        document.getElementsByClassName('wrap')[i].style.display = state;
+    }
+    document.getElementsByClassName('more')[i].addEventListener('click', function () {
+        show('flex');
+    });
+    document.getElementsByClassName('wrap')[i].addEventListener('click', function () {
+        show('none');
+    });
+    document.getElementsByClassName('close')[i].addEventListener('click', function () {
+        show('none');
+    });
+
 }
+
+
 
 
 window.onload = init();
