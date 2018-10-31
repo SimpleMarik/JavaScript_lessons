@@ -48,24 +48,30 @@ let summa = document.getElementsByClassName('costitem');
 
 
 inCart[0].addEventListener('click', function () {
-    addBasket(myBasket, 4, 15.99, 'MacBook');
+    addBasket(myBasket, 1, 15.99, 'MacBook');
 });
 inCart[1].addEventListener('click', function () {
-    addBasket(myBasket, 4, 20.99, 'MacBook');
+    addBasket(myBasket, 2, 20.99, 'MacBook');
+});
+inCart[2].addEventListener('click', function () {
+    addBasket(myBasket, 3, 30.99, 'MacBook');
 });
 
 innerIncart[0].addEventListener('click', function () {
-    addBasket(myBasket, 4, 15.99, 'MacBook');
+    addBasket(myBasket, 1, 15.99, 'MacBook');
 });
 innerIncart[1].addEventListener('click', function () {
-    addBasket(myBasket, 4, 20.99, 'MacBook');
+    addBasket(myBasket, 2, 20.99, 'MacBook');
+});
+innerIncart[2].addEventListener('click', function () {
+    addBasket(myBasket, 3, 30.99, 'MacBook');
 });
 //Работа с изображениями
 
 
 
 let loopInterval = [];
-let loopCount = 0;
+let loopCount = -1;
 let timer = 3000;
 let picCount = 0;
 
@@ -130,16 +136,24 @@ function init() {
     }
     for (let j = 0; j < popUpBigPicture.length; j++) {
         function loopPics() {
+            let myTimer = setTimeout(loopPics, 1000);
+            if (document.getElementsByClassName('window')[j].style.display == ('none')) {
+                clearTimeout(myTimer);
+                loopCount = -1;
+                return;
+            }
             loopCount++;
             if (loopCount >= popUpSliderImg[j].length) {
                 loopCount = 0;
             }
             changeBigPicture(popUpBigPicture[j] ,loopCount, popUpSliderImg[j][loopCount].src);
-            setTimeout(loopPics,1000);
-        }
 
+
+        }
+        document.getElementsByClassName('more')[j].addEventListener('click', loopPics);
     }
-    loopPics();
+
+
 }
 
 
