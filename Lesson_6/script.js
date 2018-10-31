@@ -106,11 +106,6 @@ function init() {
                 changeBigPicture (bigPicture[j] ,i, mImages[j][i].src);
             });
         }
-        for (let i = 0; i < popUpSliderImg[j].length; i++) {
-            popUpSliderImg[j][i].addEventListener('click', function () {
-                changeBigPicture(popUpBigPicture[j], j, popUpSliderImg[j][i].src);
-            })
-        }
 
         function nextPicture() {
             picCount++;
@@ -135,22 +130,34 @@ function init() {
 
     }
     for (let j = 0; j < popUpBigPicture.length; j++) {
+
+        for (let i = 0; i < popUpSliderImg[j].length; i++) {
+            popUpSliderImg[j][i].addEventListener('click', function () {
+                changeBigPicture(popUpBigPicture[j], j, popUpSliderImg[j][i].src);
+            })
+        }
+
         function loopPics() {
-            let myTimer = setTimeout(loopPics, 1000);
+
+            let myTimer = setTimeout(loopPics, timer);
+
             if (document.getElementsByClassName('window')[j].style.display == ('none')) {
                 clearTimeout(myTimer);
                 loopCount = -1;
                 return;
             }
+
             loopCount++;
+
             if (loopCount >= popUpSliderImg[j].length) {
                 loopCount = 0;
             }
             changeBigPicture(popUpBigPicture[j] ,loopCount, popUpSliderImg[j][loopCount].src);
 
-
         }
+
         document.getElementsByClassName('more')[j].addEventListener('click', loopPics);
+
     }
 
 
@@ -165,19 +172,6 @@ function changeBigPicture(wantedBigPicture, index, src) {
     loopCount = index;
     picCount = index;
 }
-
-
-/* function loopPics(bpicture, looping) {
-    loopCount++;
-    if (loopCount == looping.length) {
-        loopCount = 0;
-    }
-    changeBigPicture(bpicture ,loopCount, looping[loopCount].src);
-}
-*/
-
-//nextPic.addEventListener("click", nextPicture);
-
 
 //Всплывающее окно
 
@@ -201,6 +195,8 @@ for (let i = 0; i < popUpWindows.length; i++) {
 }
 
 
-
+let ggg = setTimeout(function () {
+    alert('gsgas');
+}, 3000);
 
 window.onload = init();
