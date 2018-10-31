@@ -194,9 +194,4 @@ for (let i = 0; i < popUpWindows.length; i++) {
 
 }
 
-
-let ggg = setTimeout(function () {
-    alert('gsgas');
-}, 3000);
-
 window.onload = init();
