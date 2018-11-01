@@ -174,7 +174,7 @@ function init() {
                 loopCount = -1;
             }
         }
-        
+
         //Присвоение функций к элементам
 
         document.getElementsByClassName('more')[j].addEventListener('click', loopPics);
@@ -187,14 +187,18 @@ function init() {
 
 }
 
+let errorPic = 'http://atom96.ru/wp-content/uploads/2017/10/%D0%BD%D0%B5%D1%82-%D1%84%D0%BE%D1%82%D0%BE.png';
 
 
 function changeBigPicture(wantedBigPicture, index, src) {
     if (src !== undefined) {
         wantedBigPicture.src = src;
-    } else {
-        wantedBigPicture.src = ('http://atom96.ru/wp-content/uploads/2017/10/%D0%BD%D0%B5%D1%82-%D1%84%D0%BE%D1%82%D0%BE.png');
     }
+
+    wantedBigPicture.onerror = function() {
+      wantedBigPicture.src = errorPic;
+    };
+
     loopCount = index;
     picCount = index;
 }
@@ -223,3 +227,17 @@ for (let i = 0; i < popUpWindow.length; i++) {
 }
 
 window.onload = init();
+
+function f() {
+
+    alert( this ); // null
+}
+
+f.call(null);
+
+function makeAdder(x) {
+    return function (y) {
+        return x + y;
+    }
+}
+
