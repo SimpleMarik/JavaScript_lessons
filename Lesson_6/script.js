@@ -12,8 +12,8 @@ function toy(id, price, name) {
 
 
 function addBasket(array, id, price, name) {
-    newtoy = new toy(id, price, name);
-    array.push(newtoy);
+    let newToy = new toy(id, price, name);
+    array.push(newToy);
     let summ = document.getElementById('summ');
     summ.innerHTML = countBasketPrice(myBasket) + ' р.';
     let products = document.getElementById('products');
@@ -93,15 +93,8 @@ for (let i = 0; i < good.length; i++) {
     popUpSliderImg[i] = popUpWindow[i].querySelectorAll('.popUpSliderImg img');
 }
 
-let images = good[0].querySelectorAll(".sliderImg img");
-
-
-
-
 
 function init() {
-
-
 
     for (let j = 0; j < mImages.length; j++) {
         for (let i = 0; i < mImages[j].length; i++) {
@@ -140,8 +133,6 @@ function init() {
                 changeBigPicture(popUpBigPicture[j], i, popUpSliderImg[j][i].src);
             });
         }
-
-
 
         function loopPics() {
 
@@ -183,6 +174,8 @@ function init() {
                 loopCount = -1;
             }
         }
+        
+        //Присвоение функций к элементам
 
         document.getElementsByClassName('more')[j].addEventListener('click', loopPics);
         document.getElementsByClassName('more')[j].addEventListener('click', interval);
@@ -199,10 +192,15 @@ function init() {
 function changeBigPicture(wantedBigPicture, index, src) {
     if (src !== undefined) {
         wantedBigPicture.src = src;
+    } else {
+        wantedBigPicture.src = ('http://atom96.ru/wp-content/uploads/2017/10/%D0%BD%D0%B5%D1%82-%D1%84%D0%BE%D1%82%D0%BE.png');
     }
     loopCount = index;
     picCount = index;
 }
+
+// Проверка на наличие адреса картинки
+// changeBigPicture(bigPicture[1], 1);
 
 //Всплывающее окно
 
