@@ -1,0 +1,601 @@
+@font-face {
+
+  font-family: Socialico;
+  src: url("../Socialico/Socialico.ttf");
+}
+
+
+
+@import "variables";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.mycontainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #445161;
+}
+
+.nav {
+  margin-left: 34px;
+  a {
+    color: #f5f5f5;
+  }
+  a:hover {
+    color: #7f8489;
+  }
+}
+
+.headline {
+  margin: 0;
+  margin-top: 1px;
+}
+
+.productname {
+  background-color: #445161;
+  width: 100%;
+  height: auto;
+  float: left;
+  position: relative;
+  .overlay {
+    position: absolute;
+  }
+  .fullscreen-bg {
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -100;
+  }
+  .fullscreen-bg__video {
+
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    margin: 0;
+  }
+
+  .headtext {
+    width: 50%;
+    margin-left: 50px;
+    margin-top: 50px;
+    float: left;
+    margin-bottom: 50px;
+    audio {
+      margin-left: 36px;
+      z-index: 1;
+      position: relative;
+    }
+  }
+}
+
+
+
+.pn {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 400;
+  text-align: left;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  display: block;
+  float: left;
+}
+
+.desc {
+  float: left;
+  margin-left: 36px;
+  margin-top: 33px;
+}
+
+.desc li {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  list-style: inside url("../images/check icon.png");
+}
+
+.headshape {
+  width: 469px;
+  height: 214px;
+  background-color: #ffffff;
+  float: right;
+  margin-right: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1100px) {
+  .headshape{
+    width: 350px;
+    height: 180px;
+  }
+}
+
+.about {
+  background-color: #ffffff;
+  width: 100%;
+  float: left;
+}
+
+.abtext {
+  margin-top: 50px;
+  float: left;
+  width: 45%;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.abo {
+  font-family: Arial;
+  color: #445161;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.abtext p {
+  font-family: Arial;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+video {
+  background-color: #445161;
+  width: 430px;
+  height: 245px;
+  float: right;
+  margin-top: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.dignity {
+  .backgroundgraymix ();
+}
+
+.digtext {
+  .h2mixin ();
+  margin: @h2margin;
+}
+
+.crossblock {
+  width: 32px;
+  height: 32px;
+  background-color: #445161;
+  float: left;
+  margin-top: 5px;
+}
+
+.leftitem {
+  width: 40%;
+  float: left;
+  margin-left: 50px;
+  margin-right: 23px;
+  margin-bottom: 50px;
+}
+
+.leftitem img {
+  margin-top: 6px;
+}
+
+.rightitem img {
+  margin-top: 6px;
+}
+
+.leftitem p {
+  font-family: Arial;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  margin-left: 41px;
+}
+
+.rightitem p {
+  font-family: Arial;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  margin-left: 41px;
+}
+
+.item {
+  margin-bottom: 35px;
+}
+
+.rightitem {
+  width: 40%;
+  float: left;
+  margin-bottom: 50px;
+}
+
+.scrinshots {
+  .backgroundwhitemix ();
+  .scrintext {
+    .h2mixin ();
+    margin: @h2margin;
+  }
+  .description {
+    width: 40%;
+    float: left;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    .image {
+      background-color: #445161;
+      width: 200px;
+      height: 150px;
+      float: left;
+    }
+    h3 {
+      font-family: Arial;
+      color: #445161;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: left;
+      margin-left: 230px;
+    }
+    p {
+      font-family: Arial;
+      color: #333333;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      margin-left: 230px;
+    }
+  }
+}
+
+.reviews {
+  .backgroundgraymix ();
+  .revtext {
+    .h2mixin ();
+    margin: @h2margin;
+  }
+  .review {
+    float: left;
+    width: 40%;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    .persontext {
+      margin-left: 100px;
+      background-color: #ebebeb;
+      padding: 20px 15px;
+      position: relative;
+      p:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        transform: rotate(45deg);
+        background-color: #ebebeb;
+        top: 27px;
+        left: -10px;
+      }
+      p {
+        font-family: Arial;
+        color: #333333;
+        font-size: 14px;
+        font-style: italic;
+        line-height: 18px;
+        text-align: left;
+        margin-bottom: 15px;
+      }
+      .name {
+        font-family: Arial;
+        color: #989898;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        font-style: normal;
+        margin-bottom: 0;
+      }
+    }
+    .person {
+      border-radius: 50%;
+      background-color: #445161;
+      width: 75px;
+      height: 75px;
+      float: left;
+    }
+  }
+}
+
+
+
+.buyit {
+  .backgroundwhitemix ();
+  .buytext {
+    .h2mixin ();
+    margin: @h2margin;
+  }
+
+  .costblock {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    .cost {
+      width: 30%;
+      background-color: #445161;
+      text-align: center;
+      border-radius: 5px;
+      .buyway {
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 30px;
+        padding: 15px 0;
+      }
+      .summ {
+        font-family: Arial;
+        color: #445162;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 30px;
+        background-color: #ffffff;
+        padding: 18px 0;
+        width: 98%;
+        text-align: center;
+        margin-left: 1%;
+      }
+
+      ol{
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+
+      ol li {
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+      }
+
+      a {
+        font-family: Arial;
+        color: #445161;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 40px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        width: 80%;
+        text-decoration: none;
+        display: inline-block;
+        margin: 20px;
+        text-transform: uppercase;
+      }
+
+      a:hover {
+        position: relative;
+        top: 1px;
+      }
+    }
+
+
+  }
+}
+
+.contacts {
+  background-color: #445162;
+  text-align: center;
+  float: left;
+  width: 100%;
+  .contacttext {
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    margin: @h2margin;
+  }
+
+  .contactscontent {
+    width: 65%;
+    margin: 0 auto;
+    .inputs {
+      float: left;
+      width: 50%;
+      form {
+        input {
+          width: 100%;
+          border-radius: 5px;
+          background-color: #ffffff;
+          height: 40px;
+          padding: 10px;
+          margin-bottom: 20px;
+          outline: none;
+          border: none;
+          box-sizing: border-box;
+        }
+        textarea {
+          width: 100%;
+          border-radius: 5px;
+          background-color: #ffffff;
+          height: 170px;
+          padding-left: 10px;
+          padding-top: 5px;
+          margin-bottom: 20px;
+          box-sizing: border-box;
+        }
+
+        button {
+          .buttonmix ();
+        }
+
+        button:hover {
+          position: relative;
+          top: 1px;
+          cursor: pointer;
+        }
+
+        label {
+          font-family: Arial;
+          color: #ffffff;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 34px;
+          text-align: left;
+          position: relative;
+          list-style-type: none;
+        }
+
+        ::-webkit-inner-spin-button {
+          display: none;
+        }
+
+      }
+
+    }
+
+    .contactlist {
+      float: right;
+
+      label {
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 34px;
+        position: relative;
+        list-style-type: none;
+      }
+
+      li {
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 34px;
+        text-align: left;
+        position: relative;
+        list-style-type: none;
+        img {
+          position: absolute;
+          top: 5px;
+          left: -35px;
+        }
+      }
+      .socialicons {
+        position: relative;
+        left: -30px;
+        margin-top: 37px;
+        a {
+          font-family: Socialico;
+          color: #ffffff;
+          font-size: 60px; /* Приближение из-за подстановки шрифтов */
+          font-weight: 400;
+          line-height: 24px; /* Приближение из-за подстановки шрифтов */
+          text-align: left;
+          text-decoration: none;
+          transition: 0.5s;
+        }
+
+        a:hover {
+          color: #c0c5ca;
+        }
+      }
+    }
+  }
+}
+
+
+footer {
+  background-color: #f5f5f5;
+  text-align: center;
+  p {
+    font-family: Arial;
+    color: #445162;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contactscontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay {
+    position: inherit !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fullscreen-bg {
+    display: none;
+  }
+
+  .productname {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .headtext {
+      margin: 50px auto 30px;
+      .desc {
+        margin: 0 auto;
+      }
+    }
+    .headshape {
+      margin: 0 auto 30px;
+    }
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .abtext{
+      margin: 50px auto 30px;
+    }
+    video {
+      margin: 0 auto 50px;
+    }
+  }
+}
+
+.clearfix:after {
+}
+
